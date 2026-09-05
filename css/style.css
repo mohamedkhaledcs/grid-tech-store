@@ -1,0 +1,698 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+
+}
+
+::selection {
+    background-color: #222;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================= NAVBAR ========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+
+
+}
+
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+
+}
+
+.navlinks {
+    display: flex;
+    gap: 25px;
+
+}
+
+.navlinks a,
+.navbuttons a {
+    padding: 8px 12px;
+    transition: 0.3s;
+
+}
+
+.navlinks a:hover {
+    background-color: #222;
+    color: #fff;
+
+}
+
+.navbuttons {
+    display: flex;
+    gap: 8px;
+
+}
+
+.navbuttons a:last-child {
+    background-color: #222;
+    color: #fff;
+
+}
+
+.navbuttons a:hover {
+    background-color: #777;
+    color: #fff;
+
+}
+
+/* ========================= HERO ========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 10%;
+    position: relative;
+    background-image: url("../assets/elevated-view-laptop-blue-backdrop.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.heroText {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    color: #fff;
+}
+
+.welcome,
+.smalltitle {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.heroText h1 {
+    font-size: clamp(42px, 6vw, 80px);
+    margin-bottom: 25px;
+}
+
+.selling {
+    font-size: 25px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.words {
+    height: 35px;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.words span {
+    height: 35px;
+    display: block;
+    color: #61dafb;
+    animation: change 10s infinite;
+}
+
+@keyframes change {
+    0%,
+    15% {
+        transform: translateY(0);
+    }
+
+    20%,
+    35% {
+        transform: translateY(-35px);
+    }
+
+    40%,
+    55% {
+        transform: translateY(-70px);
+    }
+
+    60%,
+    75% {
+        transform: translateY(-105px);
+    }
+
+    80%,
+    95% {
+        transform: translateY(-140px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+
+}
+
+
+
+.shop {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 25px;
+    background-color: #fff;
+    color: #222;
+    transition: 0.3s;
+
+}
+
+.shop:hover {
+    background-color: #61dafb;
+    transform: translateY(-3px);
+}
+
+/* ========================= PRODUCTS ========================= */
+
+.products {
+    padding: 100px 6%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title p {
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.title h2 {
+    font-size: 36px;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.productGrid > div {
+    min-height: 350px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.productText {
+    position: relative;
+    z-index: 2;
+}
+
+.productText p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.productname {
+    font-size: 30px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.productname:hover {
+    color: #ff6b35;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.price del {
+    opacity: 0.5;
+    margin-right: 10px;
+}
+
+.price span {
+    color: #e63946;
+}
+
+.productText a {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.productText a:hover {
+    transform: translateX(8px);
+}
+
+.imagebox {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imagebox img {
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    transition: transform 0.5s;
+}
+
+.productGrid > div:hover .imagebox img {
+    transform: scale(1.18);
+}
+
+/* ========================= PRODUCT CARDS ========================= */
+
+.iphone {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    background-color: #f7f8fa;
+
+}
+
+.keyboard {
+    grid-column: 3 / 4;
+    grid-row: 1;
+    background-color: #ff543c;
+    color: #fff;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.keyboard .productname:hover {
+    color: #222;
+}
+
+.controller {
+    grid-column: 4 / 5;
+    grid-row: 1;
+    background-color: #f8d24a;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.controller .productname:hover {
+    color: #fff;
+}
+
+
+.macintosh {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    background-color: #efefef;
+}
+
+.macintosh .productname {
+    max-width: 400px;
+}
+
+.macintosh .productname:hover {
+    color: #555;
+}
+
+
+.twitter {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    background-color: #4aa9e8;
+    color: #fff;
+    flex-direction: column;
+    text-align: center;
+}
+
+.twitter .productname:hover {
+    color: #222;
+}
+
+.ipad {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    background-color: #f7f7f7;
+}
+
+.ipad .productname:hover {
+    color: #6c63ff;
+}
+
+
+.icloud {
+    grid-column: 4 / 5;
+    grid-row: 2 / 4;
+    background-color: #8b6ccf;
+    color: #fff;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.icloud .productname:hover {
+    color: #f8d24a;
+}
+
+
+.television {
+    grid-column: 1 / 5;
+    background-color: #222;
+    color: #fff;
+}
+
+.television .productname {
+    max-width: 400px;
+}
+
+.television .productname:hover {
+    color: #61dafb;
+}
+
+/* ========================= ABOUT ========================= */
+
+.about {
+    padding: 100px 10%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.aboutText h2 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.aboutText > p:last-child {
+    line-height: 1.8;
+    color: #666;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.aboutGrid > div {
+    padding: 30px 20px;
+    min-height: 180px;
+    transition: 0.3s;
+}
+
+.aboutGrid > div:hover {
+    transform: translateY(-10px);
+}
+
+.aboutGrid h3 {
+    margin-bottom: 15px;
+}
+
+.aboutGrid p {
+    line-height: 1.6;
+}
+
+.quality {
+    background-color: #f8d24a;
+}
+
+.offers {
+    background-color: #6c63ff;
+    color: #fff;
+}
+
+.modern {
+    background-color: #222;
+    color: #fff;
+}
+
+/* ========================= CONTACT ========================= */
+
+.contact {
+    padding: 100px 10%;
+    background-color: #ececec;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.contactText h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.contactText > p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.email {
+    font-weight: bold;
+}
+
+.contactform {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactform input,
+.contactform textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    font: inherit;
+}
+
+.contactform textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contactform input:focus,
+.contactform textarea:focus {
+    border-color: #222;
+}
+
+.contactform button {
+    padding: 15px;
+    border: none;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contactform button:hover {
+    background-color: #6c63ff;
+}
+
+/* ========================= FOOTER ========================= */
+
+.footer {
+    padding: 50px 10% 25px;
+    background-color: #161616;
+    color: #fff;
+}
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+
+.footerTop h2 {
+    font-size: 30px;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+}
+
+.social a {
+    transition: 0.3s;
+}
+
+.social a:hover {
+    color: #61dafb;
+}
+
+.copyright {
+    padding-top: 25px;
+    text-align: center;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.copyright a {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+/* ========================= TABLET ========================= */
+
+@media (max-width: 1000px) {
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iphone,
+    .macintosh,
+    .ipad,
+    .icloud,
+    .television {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    .keyboard,
+    .controller,
+    .twitter {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================= MOBILE ========================= */
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navlinks {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 170px 7% 80px;
+    }
+
+    .selling {
+        flex-wrap: wrap;
+    }
+
+    .productGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .productGrid > div,
+    .iphone,
+    .keyboard,
+    .controller,
+    .macintosh,
+    .twitter,
+    .ipad,
+    .icloud,
+    .television {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .productGrid > div {
+        min-height: 300px;
+    }
+
+    .iphone,
+    .macintosh,
+    .ipad,
+    .icloud,
+    .television {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about {
+        padding: 70px 7%;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        padding: 70px 7%;
+    }
+
+    .footerTop {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+
+}
+
+
+
