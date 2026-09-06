@@ -137,52 +137,47 @@ a {
     display: flex;
     gap: 10px;
     align-items: center;
+
 }
 
 .words {
-    height: 35px;
+    height: 25px;
     overflow: hidden;
     display: inline-flex;
     flex-direction: column;
 }
 
 .words span {
-    height: 35px;
+    height: 25px;
     display: block;
     color: #61dafb;
     animation: change 10s infinite;
 }
 
 @keyframes change {
-    0%,
-    15% {
+    0%, 15% {
         transform: translateY(0);
     }
 
-    20%,
-    35% {
-        transform: translateY(-35px);
+    20%, 35% {
+        transform: translateY(-25px);
     }
 
-    40%,
-    55% {
-        transform: translateY(-70px);
+    40%, 55% {
+        transform: translateY(-50px);
     }
 
-    60%,
-    75% {
-        transform: translateY(-105px);
+    60%, 75% {
+        transform: translateY(-75px);
     }
-
-    80%,
-    95% {
-        transform: translateY(-140px);
+    
+    80%, 95% {
+        transform: translateY(-100px);
     }
 
     100% {
         transform: translateY(0);
     }
-
 
 }
 
